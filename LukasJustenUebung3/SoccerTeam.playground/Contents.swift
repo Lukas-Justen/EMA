@@ -49,5 +49,46 @@ class Person {
     
 }
 
+class Player : Person {
+    
+    private var tricotNumber: Int;
+    private var position: SoccerPosition;
+    
+    init(forename: String, surname: String, age: Int, tricotNumber: Int, position: SoccerPosition) {
+        self.tricotNumber = tricotNumber;
+        self.position = position;
+        super.init(forename: forename, surname: surname, age: age)
+    }
+    
+    internal func setTricotNumber(_ tricotNumber: Int) -> Player {
+        if (tricotNumber >= 1) {
+            self.tricotNumber = tricotNumber;
+        }
+        return self;
+    }
+    
+    internal func setPosition(_ position: SoccerPosition) -> Player {
+        self.position = position;
+        return self;
+    }
+    
+    internal func getTricotNumber() -> Int {
+        return self.tricotNumber;
+    }
+    
+    internal func getPosition() -> SoccerPosition {
+        return self.position;
+    }
+    
+}
+
+
+enum SoccerPosition : String {
+    
+    case Defence = "Abwehr", Midfield = "Mittelfeld", Offence = "Sturm", Goal = "Tor";
+    
+    static let allValues = [Goal, Defence, Midfield, Offence];
+}
+
 
 
