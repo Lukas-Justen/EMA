@@ -89,6 +89,66 @@ enum SoccerPosition : String {
     
     static let allValues = [Goal, Defence, Midfield, Offence];
 }
+class Team {
+    
+    private let name: String;
+    private var squad: [Player];
+    private var placeInTable: Int;
+    
+    init(name: String, squad: [Player], placeInTable: Int) {
+        self.name = name;
+        self.squad = squad;
+        self.placeInTable = placeInTable;
+    }
+    
+    func setSquad(squad: [Player]) -> Team {
+        if (squad.count == 11) {
+            self.squad = squad;
+        }
+        return self;
+    }
+    
+    func setPlaceInTable(placeInTable: Int) -> Team {
+        if (placeInTable >= 1) {
+            self.placeInTable = placeInTable;
+        }
+        return self;
+    }
+    
+    internal func getName() -> String {
+        return self.name;
+    }
+    
+    internal func getSquad() -> [Player] {
+        return self.squad;
+    }
+    
+    internal func getPlaceInTable() -> Int {
+        return self.placeInTable;
+    }
+    
+    internal func playersAndPosition() -> Void {
+        for position in SoccerPosition.allValues {
+            for player in squad {
+                if (player.getPosition() == position) {
+                    print(player.getForename() + " " + player.getSurname() + "  -->  " + player.getPosition().rawValue);
+                }
+            }
+        }
+    }
+    
+    internal func gameDay(team: Team) -> Bool {
+        let win: Bool = arc4random_uniform(2) == 0;
+        if (win) {
+            print(getName() + " hat gegen " + team.getName() + " gewonnen!");
+        } else {
+            print(getName() + " hat gegen " + team.getName() + " verloren!");
+        }
+        return win;
+    }
+    
+}
+
 
 
 
