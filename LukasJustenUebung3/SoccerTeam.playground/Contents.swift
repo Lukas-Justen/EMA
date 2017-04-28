@@ -150,5 +150,43 @@ class Team {
 }
 
 
+var mainzerSpieler: [Player] = [Player]();
+mainzerSpieler.append(Player(forename: "Jannik", surname: "Huth", age: 23, tricotNumber: 33, position: SoccerPosition.Goal));
+mainzerSpieler.append(Player(forename: "Stefan", surname: "Bell", age: 25, tricotNumber: 16, position: SoccerPosition.Defence));
+mainzerSpieler.append(Player(forename: "Daniel", surname: "Brosinski", age: 28, tricotNumber: 18, position: SoccerPosition.Defence));
+mainzerSpieler.append(Player(forename: "Niko", surname: "Bungert", age: 30, tricotNumber: 26, position: SoccerPosition.Defence));
+mainzerSpieler.append(Player(forename: "Giulio", surname: "Donati", age: 27, tricotNumber: 2, position: SoccerPosition.Defence));
+mainzerSpieler.append(Player(forename: "Pablo", surname: "De Blasis", age: 29, tricotNumber: 32, position: SoccerPosition.Midfield));
+mainzerSpieler.append(Player(forename: "Jairo", surname: "Samperio", age: 23, tricotNumber: 17, position: SoccerPosition.Midfield));
+mainzerSpieler.append(Player(forename: "Yoshinori", surname: "Muto", age: 24, tricotNumber: 9, position: SoccerPosition.Midfield));
+mainzerSpieler.append(Player(forename: "Bojan", surname: "", age: 26, tricotNumber: 10, position: SoccerPosition.Midfield));
+mainzerSpieler.append(Player(forename: "Danny", surname: "Latza", age: 27, tricotNumber: 6, position: SoccerPosition.Midfield));
+mainzerSpieler.append(Player(forename: "Jhon", surname: "Cordoba", age: 23, tricotNumber: 15, position: SoccerPosition.Midfield));
+var mainz: Team = Team(name: "1. FSV Mainz 05", squad: mainzerSpieler, placeInTable: 1);
+mainz.playersAndPosition();
+
+print("\n");
+
+var dortmunderSpieler: [Player] = [Player]();
+dortmunderSpieler.append(Player(forename: "Roman", surname: "Bürki", age: 26, tricotNumber: 38, position: SoccerPosition.Goal));
+dortmunderSpieler.append(Player(forename: "Sokratis", surname: "", age: 28, tricotNumber: 25, position: SoccerPosition.Defence));
+dortmunderSpieler.append(Player(forename: "Lukas", surname: "Piszczek", age: 31, tricotNumber: 26, position: SoccerPosition.Defence));
+dortmunderSpieler.append(Player(forename: "Erik", surname: "Durm", age: 24, tricotNumber: 37, position: SoccerPosition.Defence));
+dortmunderSpieler.append(Player(forename: "Marcel", surname: "Schmelzer", age: 29, tricotNumber: 29, position: SoccerPosition.Defence));
+dortmunderSpieler.append(Player(forename: "Sven", surname: "Bender", age: 28, tricotNumber: 6, position: SoccerPosition.Midfield));
+dortmunderSpieler.append(Player(forename: "Marco", surname: "Reus", age: 27, tricotNumber: 11, position: SoccerPosition.Midfield));
+dortmunderSpieler.append(Player(forename: "Nuri", surname: "Sahin", age: 28, tricotNumber: 8, position: SoccerPosition.Midfield));
+dortmunderSpieler.append(Player(forename: "Shinji", surname: "Kagawa", age: 28, tricotNumber: 23, position: SoccerPosition.Midfield));
+dortmunderSpieler.append(Player(forename: "Julian", surname: "Weigl", age: 21, tricotNumber: 33, position: SoccerPosition.Midfield));
+dortmunderSpieler.append(Player(forename: "Pierre-Emerick", surname: "Aubameyang", age: 27, tricotNumber: 17, position: SoccerPosition.Midfield));
+var dortmund: Team = Team(name: "Borussia Dortmund", squad: dortmunderSpieler, placeInTable: 2);
+dortmund.playersAndPosition();
+
+print("\n");
+
+for _ in 0...10 {
+    mainz.gameDay(team: dortmund);
+}
+
 
 
