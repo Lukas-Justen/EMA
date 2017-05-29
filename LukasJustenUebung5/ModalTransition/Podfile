@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ModalTransition' do
+  pod 'BubbleTransition', '~> 2.0.0'
+  use_frameworks!
+
+  # Pods for ModalTransition
+
+  target 'ModalTransitionTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ModalTransitionUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
